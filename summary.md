@@ -3,7 +3,7 @@
 ## Preface
 
 Recently I learnt git and markdown. This document is a summary of what I learnt. I want to practice markdown language and review what I learnt about git by writing this document. I will keep this document updated when I learn more about git and markdown. 
-![study hard!](http://rlv.zcache.com/keep_calm_and_study_hard_poster-r1ab7021253fd4824ab42b91a0872451b_wve_8byvr_630.jpg?view_padding=%5B285,0,285,0%5D)
+![study hard!](https://github.com/QianleLi/Markdown/image/study_hard.jpg)
 
 ## Git Basic
 
