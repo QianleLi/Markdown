@@ -3,8 +3,28 @@
 ## Preface
 
 Recently I learnt git and markdown. This document is a summary of what I learnt. I want to practice markdown language and review what I learnt about git by writing this document. I will keep this document updated when I learn more about git and markdown. 
-![study hard!](https://github.com/QianleLi/Markdown/image/study_hard.jpg)
+![study hard!]
 
+## Index
+
+* [Git Basic](summary.md#Git-Basic)
+  * [Create a new repository](summary.md#Create-a-new-repository)
+  * [add, remove and rename documents](summary.md#add,-remove-and-rename-document)
+  * [commit documents](summary.md#commit-documents)
+  * [check the info](summary.md#check-the-info)
+  * [update the remote/local repository](summary.md#update-the-remote/local-repository)
+* [Git Advance](summary.md#Git-Advance)  
+  * [.gitignorefile](summary.md#.gitignorefile)
+  * [alias](summary.md#alias)
+  * [Setup SSH ](summary.md#Setup-SSH )
+  * [More git commands](summary.md#More-git-commands)
+  * [Commit messages](summary.md#Commit-messages)
+  * [Check info and history](summary.md#Check-info-and-history)
+  * [Reset and rebase](summary.md#Reset-and-rebase)
+  * [Tag](summary.md#Tag)
+  * [Create branches](summary.md#Create-branches)
+  * [Branch operations](summary.md#Branch-operations)
+![study hard!]
 ## Git Basic
 
 **There are three spaces in local, which is repository, index and workspace. Files can be added from workspace to index, commited from index to repository and checked out from repository to workspace.**
@@ -36,7 +56,7 @@ git remote add [shortname] [url]
 git push [shortname] [branch]
 git pull [shortname] [branch]
 ```
-
+![study hard!]
 ## Git Advance
 
 - .gitignorefile
@@ -116,7 +136,7 @@ git diff [hashcode1] [hashcode2]  #between two versions
 git diff --cashed [hashcode]
 git diff --cashed HEAD
 ```
-- Reset
+- Reset and rebase
 ```
 git reset HEAD   #withdraw the file from index to workspace
 git reset HEAD --soft #from local repository to index
@@ -140,7 +160,7 @@ git tag -d [tagname]  #delete the tag
 git push [shortname] [tagname] #push the tag to the remote repository
 ```
 
-- Git branch
+- Create branches
 Branches are created to help parallel development. 
 ```
 git branch [branchname]   #create a branch
@@ -148,8 +168,34 @@ git checkout [branchname]  #change the working branch
 git checkout -b [branchname]   #create and change to the branch
 git branch -m [oldname] [newname]  #change branch name
 ```
-When two branches merge, default method will use fast forward, you may search for more info.
+- Branch operations
+When two branches merge, default method will use fast forward, you may check [here](http://www.quotemaster.org/images/d3/d3a1c43e2e78abe386d30084088c8373.jpg) for more info.
 ```
 git merge [branchname]  #merge to another branch
 git merge [branchname] --no-ff   #merge without fast forward
 ```
+If you have not merged the branch to another before you want to delete it, 
+git will remind you before you delete it. If you really want to delete it without a copy left, just input the upper case of d. If you want to delete a remote branch, just do it online.
+```
+git branch -d [branchname]   
+git branch -D [branchname]   #no reminder
+```
+Check merged/no-merged branches
+```
+git branch --merged
+git branch --no-merged
+git branch -r   #Check remote branches
+git branch -r --merged   
+git checkout -t [shortname]/[branchname]  #get a remote branch
+```
+If you want to quit in the middle of working on a branch, you can save the progress as stash by doing this:
+```
+git stash   #Save
+git stash pop  #check the saved progress
+git stash list   #give a list of stash
+git stash clear   #clear the stash list
+```
+![study hard!]
+
+<!-- This is the link of the picture -->
+[study hard!]:http://www.quotemaster.org/images/d3/d3a1c43e2e78abe386d30084088c8373.jpg
