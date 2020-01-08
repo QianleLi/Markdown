@@ -28,21 +28,21 @@ Recently I learnt git and markdown. This document is a summary of what I learnt.
 ## Git Basic
 
 **There are three spaces in local, which is repository, index and workspace. Files can be added from workspace to index, commited from index to repository and checked out from repository to workspace.**
-- Create a new repository  
+### Create a new repository  
 `git init`  
 `git clone [url]`
-- add, remove and rename documents
+### add, remove and rename documents
 ```
 git add [file1] [file2]
 git add .
 git rm [file1] [file2]
 git mv [file-origin] [file-renamed]
 ```
-- commit documents
+### commit documents
 `git commit -m [message]`  
 if no new document is added, just update
 `git commit -am [message]`
-- check the info
+### check the info
 ```
 git status
 git log
@@ -50,7 +50,7 @@ git show [hash code]
 ```
 
 **A remote repository can be cloned to be a local repository, it can also be pulled to update a local repository. A local repository can be pushed to be a remote repository.**
-- update the remote/local repository
+### update the remote/local repository
 ```
 git remote add [shortname] [url]
 git push [shortname] [branch]
@@ -59,7 +59,7 @@ git pull [shortname] [branch]
 ![study hard!]
 ## Git Advance
 
-- .gitignorefile
+### .gitignorefile
 This file record exact documents or exact type of files that git ignores. So that `git status` does not show these files as not updated.   
 In a .gitignore file, one line represents a file or one type of file that you want to ignore.  
 For example:  
@@ -74,7 +74,7 @@ If you have ignored a file or type of files in .gitignore, but you want to add t
 If you want to check which line of .gitignore claim the rule that make one document be ignored, do this:  
 `git check-ignore -v [filename]`  
 
-- alias
+### alias
 By using alias you can make your work much faster.  
 You can setup one alias by this:  
 `git config --global alias.ci commit #You can input 'ci' instead of 'commit'`  
@@ -87,13 +87,13 @@ Or you can check or setup all alias in ~/.gitconfig file, you can see a section 
 	hi = log --pretty=format: '%h %ad | %s%d [%an]' --graph --date=short
 ```
 
-- Setup SSH 
+### Setup SSH 
 
 *Create SSH key*  
 `ssh-Keygen -t rsa -C "your-email-address"`  
 *Find the key in `~/.ssh/id_rsa.pub` and copy the key, go to the **SSH and GPG keys** session in settings of github, click **New SSH key** and paste the key, done*  
 
-- More git commands
+### More git commands
 ```
 git        #give a list of common sub-commands
 git help -a   #give all sub-commands
@@ -105,7 +105,7 @@ git clean -xf  #git will delete all untracked files
 git add -p    #you can add one file at several different times, you should search for more info, maybe I will update detail someday
 ```
 
-- Commit messages
+### Commit messages
   * Each commit should based on one small feat, bug fix or improvement.
   * All programs of a unit test should be commit at the same time.
   * Programs with grammer issues should not be committed.
@@ -122,7 +122,7 @@ git add -p    #you can add one file at several different times, you should searc
   * Subject include: change, modify, update
   * For more info you can check [I am sorry this is in Chinese](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
 
-- Check info and history
+### Check info and history
 ```
 git show HEAD ~2    #Check two commits ahead
 git show [hash code]
@@ -136,7 +136,7 @@ git diff [hashcode1] [hashcode2]  #between two versions
 git diff --cashed [hashcode]
 git diff --cashed HEAD
 ```
-- Reset and rebase
+### Reset and rebase
 ```
 git reset HEAD   #withdraw the file from index to workspace
 git reset HEAD --soft #from local repository to index
@@ -149,7 +149,7 @@ git rebase -i HEAD~3   #use rabase order to change the past three commit history
 **Notice that HEAD can be replaced by any [hashcode].**  
 *If you cannot solve the problem occurs during rebasing, you can always use `git rebase --abort` to give up.*
 
-- Tag
+### Tag
 You can tag important commiments to make it easier for people to find it.
 ```
 git tag [tagname]  #tag the last commitment
@@ -160,7 +160,7 @@ git tag -d [tagname]  #delete the tag
 git push [shortname] [tagname] #push the tag to the remote repository
 ```
 
-- Create branches
+### Create branches
 Branches are created to help parallel development. 
 ```
 git branch [branchname]   #create a branch
@@ -168,7 +168,7 @@ git checkout [branchname]  #change the working branch
 git checkout -b [branchname]   #create and change to the branch
 git branch -m [oldname] [newname]  #change branch name
 ```
-- Branch operations
+### Branch operations
 When two branches merge, default method will use fast forward, you may check [here](http://www.quotemaster.org/images/d3/d3a1c43e2e78abe386d30084088c8373.jpg) for more info.
 ```
 git merge [branchname]  #merge to another branch
